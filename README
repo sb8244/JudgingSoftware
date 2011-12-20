@@ -1,0 +1,15 @@
+This package consists of both a client and server for submitting and judging programming team problems.
+
+JudgingClient:
+	The executable JudgeClient.jar can be ran directly or compiled from source in the /src folder.  There are several example files given (the .java files in the directory with the executable) which pair up with how the server is configured out of the current branch.  If you make a change to the serverProperties so that different problems can be added, then these will probably not matter to you.
+	
+	The Client pulls all of the Problems from the Server, so do not worry about having to change code in two locations when making changes.
+		
+	The Client is pretty straight forward to use.  Select the problem name that you are wishing to submit for, select the source file (.java) for it, and submit the code to the server.  You will see a message containing how your problem was judged.
+	
+JudgingServer:
+	The executable Server.jar in the ServerDistribution folder can only be run via a JDK JRE.  This is because the method of invoking the java compiler internally can only be done in the JDK JRE, not a end-user JRE.  I find it is easiest to just run via eclipse, being careful to select the proper jre.  Otherwise, you must invoke the correct java.exe program by hand.  The JDK JRE can not be set as the default JRE.
+	
+	The ServerProperties.prop file contains all of the problem names and port number.  For each problem names (which are space delimited on a single line), there must also be a name.in and name.out file corresponding to correct input and output.  There are two examples given in the  distribution.  If these files are not there, the problem will not be presented to the user to be judged.
+	
+	When starting the server (from the JDK JRE), you can just sit back and let it do its thing, it is completely interaction free.
